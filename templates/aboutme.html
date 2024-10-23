@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+<head>
+	{% load static %}
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title> Oelkuct </title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	<link rel='stylesheet' href="{% static 'css/aboutme2.css' %}">
+</head>
+<body style = 'max-width:100%;'>
+	<label>
+		<!-- toggle button here -->
+		<input type="checkbox" checked>
+		<div class="toggle" style = 'margin-left:.9%;' >
+			<span class="common top_line"></span>
+			<span class="common middle_line" ></span>
+			<span class="common bottom_line" ></span>
+		</div>
+		<div class="sidebar" style = 'width:15%;'>
+	<ul class = 'first-ul'>
+						<li style="--i:1; font-size:40px;margin-left:45%;margin-top:15.5%;"><a href="#">Nav</a></li>
+
+			<li style="--i:1;margin-top:4%;font-size:30px;margin-left:4.2%;margin-top:35%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/Home"><i class="fas fa-tv" style = 'font-size:20px;margin-left:20.5%'></i> Home</a></li>
+
+<li style="--i:3;margin-top:4%;font-size:30px;margin-left:24%;"><a href="https://www.meetup.com/sc-code-and-data-science/"><i class="far fa-user"  style = 'font-size:25px;margin-left:-5%;'></i> SC Code</a></li>
+
+			<li style="--i:3;margin-top:4%;font-size:27px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/FSE" ><i class="far fa-heart" style = 'margin-left:-5%;'> </i> Full Stack</a></li>
+			<li style="--i:3;margin-top:4%;font-size:27px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/SWE"><i class="far fa-address-book" style = 'margin-left:-5%;'></i> Software</a></li>
+			<li style="--i:3;margin-top:4%;font-size:26px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/DS"><i class="far fa-address-book" style = 'margin-left:-5%;'></i> ML + DS</a></li>
+		 <li style="--i:3;margin-top:4%;font-size:26px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/WEBDEV"><i class="far fa-address-book" style = 'margin-left:-5%;'></i> Web Dev</a></li>
+			<li style="--i:3;margin-top:4%;font-size:27px;margin-left:24%;"><a href="mailto:oelkuctmp@gmail.com"><i class="far fa-comment" style = 'font-size:25px;margin-left:-5%'></i> Email Me</a></li>
+			<li style="--i:3;margin-top:4%;font-size:25px;margin-left:24%;"><a href="https://github.com/jake-bioinfo/tld"><i class="far fa-folder" style = 'margin-left:-5%'></i> Publication</a></li>
+		</ul class = 'first-ul'>
+		</div>
+		       <style type="text/css">
+            #div1
+            {position:absolute;margin-left:-10%;;	}
+        	#div2
+				   {position:absolute; margin-left:-10%;	}
+			   </style>
+    <script>
+        function allowDrop(ev)
+        {
+            ev.preventDefault();
+        }
+        function drag(ev)
+        {
+            ev.dataTransfer.setData("Url","https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/ds");
+        }
+
+        function drop(ev)
+        {
+            ev.preventDefault();
+            window.location=ev.dataTransfer.getData("Url");
+        }
+
+		        function allowDrop2(ev)
+        {
+            ev.preventDefault();
+        }
+
+                function drag2(ev)
+        {
+            ev.dataTransfer.setData("Url","https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/FSE");
+        }
+
+        function drop(ev)
+        {
+            ev.preventDefault();
+            window.location=ev.dataTransfer.getData("Url");
+        }
+
+				        function allowDrop3(ev)
+        {
+            ev.preventDefault();
+        }
+
+                function drag3(ev)
+        {
+            ev.dataTransfer.setData("Url","https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/swe");
+        }
+
+        function drop(ev)
+        {
+            ev.preventDefault();
+            window.location=ev.dataTransfer.getData("Url");
+        }
+					        function allowDrop4(ev)
+        {
+            ev.preventDefault();
+        }
+
+                function drag4(ev)
+        {
+            ev.dataTransfer.setData("Url","https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/webdev");
+        }
+
+        function drop(ev)
+        {
+            ev.preventDefault();
+            window.location=ev.dataTransfer.getData("Url");
+        }
+    </script>
+
+<div class='wrapper' style = 'margin-left:80%;width:80%;'>
+
+
+<!-->
+					  <style type="text/css">
+        .speech-bubble{
+  --arrow-w:0.5em;
+  --arrow-h:1em;
+  --bubble-corners:0;
+  --w:12em;
+  --h:12em;
+  --border-size:3px;
+  --text-color:black;
+  --bubble-color:white;
+  --border-color:black;
+}
+.speech-bubble{
+  text-align:center;
+  font-family:cursive;
+  font-size:26px;
+  font-weight:bold;
+  color:var(--text-color);
+  background:var(--bubble-color);
+  padding:1em;
+  position:relative;
+  border-radius:var(--bubble-corners);
+  max-width:var(--w);
+  height:10%;
+  box-shadow:0 0 0 var(--border-size) var(--border-color);
+}
+
+.speech-bubble.round{
+  --bubble-corners:1em;
+}
+
+.speech-bubble.circle{
+  --bubble-corners:100%;
+  padding:2em;
+}
+
+.speech-bubble:before,.speech-bubble:after{
+  content:"";
+  position:absolute;
+  bottom:calc(-1 * var(--arrow-h) * 2 + 0.5px);
+  left:50%;
+  border-style:solid;
+  border-width:var(--arrow-h) var(--arrow-w);
+  border-color:var(--bubble-color) transparent transparent;
+}
+
+.speech-bubble:before{
+  border-width:calc(var(--arrow-h) + var(--border-size)) calc(var(--arrow-w) + var(--border-size));
+  border-color:var(--border-color) transparent transparent;
+  bottom:calc(-1 * var(--arrow-h) * 2 - 2.5*var(--border-size));
+  left:calc(50% - var(--border-size));
+}
+
+.speech-bubble.t:after{
+  border-color:transparent transparent var(--bubble-color);
+  bottom:auto;
+  top:calc(-1 * var(--arrow-h) * 2 + 0.5px);
+}
+
+.speech-bubble.t:before{
+  border-width:calc(var(--arrow-h) + var(--border-size)) calc(var(--arrow-w) + var(--border-size));
+  border-color:transparent transparent var(--border-color);
+  bottom:auto;
+  top:calc(-1 * var(--arrow-h) * 2 - 2.5*var(--border-size));
+}
+
+.speech-bubble.l:after{
+  border-color:transparent var(--bubble-color) transparent transparent;
+  bottom:auto;
+  border-width:var(--arrow-w) var(--arrow-h);
+  top:calc(50% - var(--arrow-w));
+  left:calc(-1 * var(--arrow-h) * 2 + 0.5px);
+
+}
+
+.speech-bubble.l:before{
+  border-width:calc(var(--arrow-w) + var(--border-size)) calc(var(--arrow-h) + var(--border-size));
+  border-color:transparent var(--border-color) transparent transparent;
+  bottom:auto;
+  top:calc(50% - var(--arrow-w) - var(--border-size));
+  left:calc(-1 * var(--arrow-h) * 2 - 2.5*var(--border-size));
+}
+
+.speech-bubble.r:after{
+  border-color:transparent transparent transparent var(--bubble-color);
+  bottom:auto;
+  left:auto;
+  border-width:var(--arrow-w) var(--arrow-h);
+  top:calc(50% - var(--arrow-w));
+  right:calc(-1 * var(--arrow-h) * 2 + 0.5px);
+
+}
+
+.speech-bubble.r:before{
+  border-width:calc(var(--arrow-w) + var(--border-size)) calc(var(--arrow-h) + var(--border-size));
+  border-color:transparent transparent transparent var(--border-color);
+  bottom:auto;
+  left:auto;
+  top:calc(50% - var(--arrow-w) - var(--border-size));
+  right:calc(-1 * var(--arrow-h) * 2 - 2.5*var(--border-size));
+
+}
+
+.speech-bubble.pop{
+  animation-name: pop;
+  animation-duration: 0.5s;
+  animation-timing-function:cubic-bezier(0.755, 0.050, 0.855, 0.060);
+}
+
+.speech-bubble.float{
+  animation-name: float-up;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function:ease;
+
+}
+
+.speech-bubble.r.float{
+  animation-name: float-left;
+}
+
+.speech-bubble.l.float{
+  animation-name: float-right;
+
+}
+
+.speech-bubble.t.float{
+  animation-name: float-down;
+}
+
+@keyframes pop {
+  0% {transform: scale(0.8);}
+  80% {transform: scale(1.1);}
+  90% {transform: scale(0.9);}
+  100% {transform: scale(1);}
+}
+
+@keyframes float-up {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(calc(-1 * var(--arrow-h)));}
+}
+
+@keyframes float-left {
+  0% {transform: translateX(0);}
+  50% {transform: translateX(calc(-1 * var(--arrow-h)));}
+}
+
+@keyframes float-right {
+  0% {transform: translateX(0);}
+  50% {transform: translateX(var(--arrow-h));}
+}
+
+@keyframes float-down {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(var(--arrow-h));}
+}
+
+						  .fadein {
+						  animation: 1.5s fadeIn;
+						   animation-fill-mode: forwards;
+						   visibility:hidden;
+						  }
+		@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+						  					  .fadeout {
+						  animation: 2.5s fadeout;
+						   animation-fill-mode: forwards;
+						   animation-delay: 5.5s;
+
+						  }
+		@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+
+  100% {
+    visibility: visible;
+    opacity: 0;
+  }
+}
+
+						  .fadein2 {
+						  animation: 3s fadeIn;
+						   animation-fill-mode: forwards;
+						   visibility:hidden;
+						   animation-delay:6s;
+						  }
+		@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+  }
+  .fadein3 {
+						  animation: 2s fadeIn;
+						   animation-fill-mode: forwards;
+						   visibility:hidden;
+						   						   animation-delay:6.5s;
+
+						  }
+		@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+  opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+
+}
+
+			   </style>
+
+
+
+<style>
+.wrap {
+  position: relative;
+  width: 200px;
+}
+
+.inner {
+  position: absolute;
+  top: 0;
+  right: 0
+}
+</style>
+			<style>
+.scroll-left {
+ height: 50px;
+ overflow: hidden;
+ position: relative;
+ background: yellow;
+ color: orange;
+ border: 1px solid orange;
+}
+.scroll-left p {
+ position: absolute;
+ width: 40%;
+ height: 100%;
+ line-height: 50px;
+ text-align: center;
+ /* Starting position */
+ transform:translateX(100%);
+ /* Apply animation to this element */
+ animation: scroll-left 12s linear infinite;
+}
+/* Move it (define the animation) */
+@keyframes scroll-left {
+ 0%   {
+ transform: translateX(100%);
+ }
+ 100% {
+ transform: translateX(-100%);
+ }
+}
+								@font-face {
+   font-family: "font2";
+   src: url('/static/css/font1.ttf') format('truetype');
+}
+</style>
+
+
+<p style = 'width:800px;font-family:font2;font-size:40px;color:orange;position:absolute;margin-left:-65.5%;margin-top:-3.8%;z-index:190'> Mark Oelkuct</p>
+
+<div class="wrap">
+
+
+    <img src='/static/img/select_grid_v2.4.png' ondrop="drop(event)" ondragover="allowDrop(event)" style = 'width:1400px;margin-left:-728%;margin-top:-50%;'>
+
+
+	<a class = 'inner' >
+			<div class = 'fadeout' >
+
+
+	<div class = 'fadeout'>
+
+			<div class = 'fadein'>
+<style>
+				@font-face {
+   font-family: "font1";
+   src: url('/static/css/font1.ttf') format('truetype');
+}
+</style>
+				<div class="speech-bubble l round float" style = 'font-family:font1;height:20%;position:absolute;z-index:10;margin-left:-259%;margin-top:46.9%;'>Hi I'm Mark and I wear a lot of hats.
+
+				</div>
+			</div>
+
+
+
+
+
+
+    <img id = reloadgif src='/static/img/crt_icev11.gif?dummy=8484744'  style =
+	'border-radius:2.5%;
+	margin-top:213.5%;
+    margin-left:-1162.5%;
+    width:121.9%;
+	height:192.925px;'>
+
+
+	</a>
+
+	</div>
+
+
+	<a class = 'inner'>
+
+    <img id = reloadgif2 src='/static/img/crtsc2.gif'  style =
+	'border-radius:2.5%;
+	margin-top:213.5%;
+    margin-left:-864.5%;
+    width:123.4%;
+	height:192.925px;'>
+	</a>
+<a class = 'inner'>
+
+    <img id = reloadgif3 src='/static/img/crt_code.gif'  style =
+	'border-radius:2.5%;
+	margin-top:214.1%;
+    margin-left:-566%;
+    width:120.5%;
+	height:192.7px;'>
+	</a>
+<a class = 'inner'>
+
+    <img id = reloadgif4 src='/static/img/crt_biofac.gif'  style =
+	'border-radius:2.5%;
+	margin-top:213.5%;
+    margin-left:-264.5%;
+    width:123.9%;
+	height:192.925px;'>
+	</a>
+<script language="javascript" type="text/javascript">
+    var d = new Date();
+    document.getElementById("reloadgif").src =
+      "/static/img/crt_icev11.gif?ver=" +
+       d.getTime();
+	  var d2 = new Date();
+    document.getElementById("reloadgif2").src =
+      "/static/img/crtsc2.gif?ver=" +
+       d2.getTime();
+	var d3 = new Date();
+    document.getElementById("reloadgif3").src =
+      "/static/img/crt_code.gif?ver=" +
+       d3.getTime();
+	var d4 = new Date();
+    document.getElementById("reloadgif4").src =
+      "/static/img/crt_biofac.gif?ver=" +
+       d4.getTime();
+</script>
+
+</div>
+		<div class = 'fadein2'>
+				<a class = 'inner'>
+
+			<div class="speech-bubble l round float" style = 'font-family:font1;height:190px;position:absolute;z-index:6;margin-left:-710px;margin-top:70px;'>Click or Drag a hat to my head to find what you're shopping for.
+
+				</div>
+				</a>
+	</div>
+
+		<div class = 'fadein3'>
+			<a class = 'inner' style = 'margin-left:-50%'>
+						<img  src="/static/img/titlesv1.png" draggable="true" ondragstart="drag2(event)" id="drag2" style = 'position:absolute;z-index:9;width:1170px;;height:40px;margin-left:-1390px;margin-top:365px;'>
+			</a>
+		<a href = 'https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/FSE' class = 'inner' style = margin-left:-50%;>
+			<img  src="/static/img/fin.png" draggable="true" ondragstart="drag2(event)" id="drag2" style = 'position:absolute;z-index:9;width:150px;;height:150px;margin-left:-1350px;margin-top:445px;'>
+		</a>
+	<div class = 'fadein3'>
+		<a href = 'https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/DS' class = 'inner' style = margin-left:-50%;>
+			<img  src="/static/img/weege.png" draggable="true" ondragstart="drag(event)" id="drag" style = 'position:absolute;z-index:9;width:150px;;height:150px;margin-left:-1050px;margin-top:445px;'>
+		</a>
+	</div>
+			<div class = 'fadein3'
+	<div class = 'fadein3'>
+		<a href = 'https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/swe' class = 'inner' style = margin-left:-50%;>
+			<img  src="/static/img/swe.png" draggable="true" ondragstart="drag3(event)" id="drag3" style = 'position:absolute;z-index:9;width:150px;;height:150px;margin-left:-750px;margin-top:445px;'>
+		</a>
+	</div>
+	<div class = 'fadein3'>
+		<a href = 'https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/webdev' class = 'inner' style = margin-left:-50%;>
+			<img  src="/static/img/web.png" draggable="true" ondragstart="drag4(event)" id="drag4" style = 'position:absolute;z-index:9;width:150px;;height:150px;margin-left:-450px;margin-top:445px;'>
+		</a>
+	</div>
+
+
+
+				</div>
+
+
+</div>
+
+
+
+				<p style="text-align:left; width: 600px; padding-left:420px; padding-top:300px; padding-bottom: 25px; font-size: 30px;"><b style = 'margin-left:-151%'></b> </p>
+<p style="text-align:left; width: 800px; margin-left:230px;padding-top:-100px; padding-bottom: 10px;  text-indent: 70px; color='white';">
+  </p>
+					<div class = 'fadein'>
+ 	<p style="text-align:left;margin-left:-90% width: 600px;text-indent:-25%; text-size:30px; padding-bottom:0px;color='white';opacity:0;">
+ 		Drag a hat to my head to find what you're shopping for. </p>
+<p style="text-align:left; width: 800px; text-indent:14%; padding-bottom: 0px;  color='white';opacity:0;">
+Use the FSD hat to see my entire showcase</p>
+					</div>
+
+
+
+				 <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .imgbox2 {
+            display: grid;
+            height: 50vh;
+            position:relative;
+        }
+        .center-fit2 {
+            max-width: 50vh;
+            max-height: 50vh;
+            margin: auto;
+        }
+    </style>
+
+
+
+
+
+
+			</main>
+
+			</center>
+			</div>
+	</div>
+
+
+
+
+
+
+
+
+	</label>
+	<div class='objects'>
+			<ul class='box'>
+			<li></li>
+		</ul>
+		<ul class = 'box7'>
+
+			<li></li>
+		</ul>
+			<ul class = 'box8'>
+
+			<li></li>
+		</ul>
+
+
+
+		<ul class='box2'>
+			<li></li>
+		</ul class = box2>
+		<ul class='slowbox2'>
+			<li></li>
+		</ul class = slowbox2>
+		<ul class='box4'>
+			<li></li>
+		</ul class = 'box4'>
+	</div>
+</body>
+</html>
+

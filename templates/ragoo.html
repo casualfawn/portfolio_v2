@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      	{% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      	<link rel='stylesheet' href="{% static 'css/aboutme2.css' %}">
+  </head>
+  <body style = 'margin:0;padding:0;padding-top:0;padding-bottom:0;padding-top:0;margin-top:-2.1%;overflow-x:hidden;'>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+       <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+     <script src="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"></script>
+  </body>
+</html>
+<style>
+
+input[type='checkbox']:checked ~ .toggle .top_line{
+	transform:  rotate(-45deg);
+	left: 10px;
+	top: 22px;
+	width: 30px;
+}
+input[type='checkbox']:checked ~ .toggle .bottom_line{
+	transform:  rotate(45deg);
+	left: 10px;
+	top: 22px;
+	width: 30px;
+}
+input[type='checkbox']:checked ~ .toggle .middle_line{
+	transform:  translateX(200px);
+	opacity: 0;
+}
+input[type='checkbox']:checked ~  .sidebar {
+	transform:  translateX(0);
+}
+input[type='checkbox']:checked ~  .sidebar ul li{
+	transform:  translateX(calc(0 * var(--i)));
+}
+
+* style toggle button here */
+input[type="checkbox"]{
+	-webkit-appearance: none;
+	visibility: hidden;
+	display: none;
+}
+.toggle{
+	position: absolute;
+	height: 50px;
+	width:  50px;
+	top: 50px;
+	left: 60px;
+	border: 0.8px solid rgba(255,255,255,0.2);
+	cursor: pointer;
+	border-radius: 2px;
+	z-index: 1;
+}
+.toggle .common{
+	position: absolute;
+	height: 4px;
+	width:  40px;
+	left: 50%;
+	background: #fff;
+	border-radius: 50px;
+	transform: translate(-50%,-50%);
+	transition: 0.3s ease;
+}
+.toggle .top_line{
+	top: 30%;
+}
+.toggle .middle_line{
+	top: 50%;
+}
+.toggle .bottom_line{
+	top: 70%;
+}
+
+
+input[type='checkbox']:checked ~ .toggle .top_line{
+	transform:  rotate(-45deg);
+	left: 10px;
+	top: 22px;
+	width: 30px;
+}
+input[type='checkbox']:checked ~ .toggle .bottom_line{
+	transform:  rotate(45deg);
+	left: 10px;
+	top: 22px;
+	width: 30px;
+}
+input[type='checkbox']:checked ~ .toggle .middle_line{
+	transform:  translateX(200px);
+	opacity: 0;
+}
+input[type='checkbox']:checked ~  .sidebar {
+	transform:  translateX(0);
+}
+input[type='checkbox']:checked ~  .sidebar ul li{
+	transform:  translateX(calc(0 * var(--i)));
+}
+</style>
+	<label>
+		<!-- toggle button here -->
+		<input type="checkbox" checked>
+			<div class="toggle" style = 'margin-left:.9%;' >
+				<span class="common top_line"></span>
+				<span class="common middle_line" ></span>
+				<span class="common bottom_line" ></span>
+			</div>
+			<div class="sidebar" style = 'width:15%;margin-left'>
+				<ul class = 'first-ul'>
+					<li style="--i:1; font-size:40px;margin-left:45%;margin-top:25%;"><a href="#">Nav</a></li>
+					<li style="--i:1;margin-top:4%;font-size:30px;margin-left:24%;margin-top:35%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/Home"><i class="fas fa-tv" style = 'font-size:20px;margin-left:20.5%'></i> Home</a></li>
+					<li style="--i:3;margin-top:4%;font-size:30px;margin-left:24%;"><a href="https://www.meetup.com/sc-code-and-data-science/"><i class="far fa-user"  style = 'font-size:25px;margin-left:-5%;'></i> SC Code</a></li>
+					<li style="--i:3;margin-top:4%;font-size:27px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/FSE" ><i class="far fa-heart" style = 'margin-left:-5%;'> </i> Full Stack</a></li>
+					<li style="--i:3;margin-top:4%;font-size:27px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/SWE"><i class="far fa-address-book" style = 'margin-left:-5%;'></i> Software</a></li>
+					<li style="--i:3;margin-top:4%;font-size:26px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/DS"><i class="far fa-address-book" style = 'margin-left:-5%;'></i> ML + DS</a></li>
+		 			<li style="--i:3;margin-top:4%;font-size:26px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/WEBDEV"><i class="far fa-address-book" style = 'margin-left:-5%;'></i> Web Dev</a></li>
+					<li style="--i:3;margin-top:4%;font-size:27px;margin-left:24%;"><a href="mailto:oelkuctmp@gmail.com"><i class="far fa-comment" style = 'font-size:25px;margin-left:-5%'></i> Email Me</a></li>
+			        <li style="--i:3;margin-top:4%;font-size:25px;margin-left:24%;"><a href="https://github.com/jake-bioinfo/tld"><i class="far fa-folder" style = 'margin-left:-5%'></i> Publication</a></li>
+                </ul class = 'first-ul'>
+			</div>
+    </label>
+
+
+
+<style>
+
+    .popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+</style>
+                        <script>
+// When the user clicks on <div>, open the popup
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+</script>
+
+
+
+
+<style>
+.scroll{
+	position: absolute;
+	background-color: transparent;
+	width: 90%;
+	height: 80%;
+	margin-right: 10%;
+	margin-left: 10%;
+	overflow-x: auto;
+	overflow-y: auto;
+	text-align:justify;
+	left: 30%;
+	}
+
+.wrapper{
+	width: 80%;
+	max-width: 100%;
+	position: fixed;
+	z-index: 2;
+	left: 50px;
+	text-align: center;
+	color: #fff;
+	font-size: 50px;
+	margin-bottom: 15px;
+}
+</style>
+<style>
+    #myInput {
+  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myTable {
+  border-collapse: collapse; /* Collapse borders */
+  width: 100%; /* Full-width */
+  border: 1px solid #ddd; /* Add a grey border */
+  font-size: 18px; /* Increase font-size */
+  height:20%;
+}
+
+#myTable th, #myTable td {
+  text-align: left; /* Left-align text */
+  padding: 5.5px; /* Add padding */
+  width:100%;
+  font-size:13.9px;
+}
+
+
+
+#myTable tr {
+  /* Add a bottom border to all table rows */
+  border-bottom: 1px solid #ddd;
+    font-size:15px;
+
+}
+
+#myTable tr.header, #myTable tr:hover {
+  /* Add a grey background color to the table header and on hover */
+  background-color: #f1f1f1;
+
+}
+</style>
+<style>
+.wrap {
+  position: relative;
+  width: 200px;
+}
+
+.inner {
+	position: absolute;
+	background-color: transparent;
+	width: 90%;
+	height: 20%;
+	margin-right: 10%;
+	margin-left: 0%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+
+	text-align:justify;
+	left: 30%;
+}
+
+</style>
+
+					  <style type="text/css">
+        .speech-bubble{
+  --arrow-w:0.5em;
+  --arrow-h:1em;
+  --bubble-corners:0;
+  --w:12em;
+  --h:12em;
+  --border-size:3px;
+  --text-color:black;
+  --bubble-color:white;
+  --border-color:black;
+}
+.speech-bubble{
+  text-align:center;
+  font-family:cursive;
+  font-size:26px;
+  font-weight:bold;
+  color:var(--text-color);
+  background:var(--bubble-color);
+  padding:1em;
+  position:relative;
+  border-radius:var(--bubble-corners);
+  max-width:var(--w);
+  height:10%;
+  box-shadow:0 0 0 var(--border-size) var(--border-color);
+}
+
+.speech-bubble.round{
+  --bubble-corners:1em;
+}
+
+.speech-bubble.circle{
+  --bubble-corners:100%;
+  padding:2em;
+}
+
+.speech-bubble:before,.speech-bubble:after{
+  content:"";
+  position:absolute;
+  bottom:calc(-1 * var(--arrow-h) * 2 + 0.5px);
+  left:50%;
+  border-style:solid;
+  border-width:var(--arrow-h) var(--arrow-w);
+  border-color:var(--bubble-color) transparent transparent;
+}
+
+.speech-bubble:before{
+  border-width:calc(var(--arrow-h) + var(--border-size)) calc(var(--arrow-w) + var(--border-size));
+  border-color:var(--border-color) transparent transparent;
+  bottom:calc(-1 * var(--arrow-h) * 2 - 2.5*var(--border-size));
+  left:calc(50% - var(--border-size));
+}
+
+.speech-bubble.t:after{
+  border-color:transparent transparent var(--bubble-color);
+  bottom:auto;
+  top:calc(-1 * var(--arrow-h) * 2 + 0.5px);
+}
+
+.speech-bubble.t:before{
+  border-width:calc(var(--arrow-h) + var(--border-size)) calc(var(--arrow-w) + var(--border-size));
+  border-color:transparent transparent var(--border-color);
+  bottom:auto;
+  top:calc(-1 * var(--arrow-h) * 2 - 2.5*var(--border-size));
+}
+
+.speech-bubble.l:after{
+  border-color:transparent var(--bubble-color) transparent transparent;
+  bottom:auto;
+  border-width:var(--arrow-w) var(--arrow-h);
+  top:calc(50% - var(--arrow-w));
+  left:calc(-1 * var(--arrow-h) * 2 + 0.5px);
+
+}
+
+.speech-bubble.l:before{
+  border-width:calc(var(--arrow-w) + var(--border-size)) calc(var(--arrow-h) + var(--border-size));
+  border-color:transparent var(--border-color) transparent transparent;
+  bottom:auto;
+  top:calc(50% - var(--arrow-w) - var(--border-size));
+  left:calc(-1 * var(--arrow-h) * 2 - 2.5*var(--border-size));
+}
+
+.speech-bubble.r:after{
+  border-color:transparent transparent transparent var(--bubble-color);
+  bottom:auto;
+  left:auto;
+  border-width:var(--arrow-w) var(--arrow-h);
+  top:calc(50% - var(--arrow-w));
+  right:calc(-1 * var(--arrow-h) * 2 + 0.5px);
+
+}
+
+.speech-bubble.r:before{
+  border-width:calc(var(--arrow-w) + var(--border-size)) calc(var(--arrow-h) + var(--border-size));
+  border-color:transparent transparent transparent var(--border-color);
+  bottom:auto;
+  left:auto;
+  top:calc(50% - var(--arrow-w) - var(--border-size));
+  right:calc(-1 * var(--arrow-h) * 2 - 2.5*var(--border-size));
+
+}
+
+.speech-bubble.pop{
+  animation-name: pop;
+  animation-duration: 0.5s;
+  animation-timing-function:cubic-bezier(0.755, 0.050, 0.855, 0.060);
+}
+
+.speech-bubble.float{
+  animation-name: float-up;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function:ease;
+
+}
+
+.speech-bubble.r.float{
+  animation-name: float-left;
+}
+
+.speech-bubble.l.float{
+  animation-name: float-right;
+
+}
+
+.speech-bubble.t.float{
+  animation-name: float-down;
+}
+
+@keyframes pop {
+  0% {transform: scale(0.8);}
+  80% {transform: scale(1.1);}
+  90% {transform: scale(0.9);}
+  100% {transform: scale(1);}
+}
+
+@keyframes float-up {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(calc(-1 * var(--arrow-h)));}
+}
+
+@keyframes float-left {
+
+  0% {transform: translateX(0);}
+  50% {transform: translateX(calc(-.2 * var(--arrow-h)));}
+}
+
+@keyframes float-right {
+  0% {transform: translateX(0);}
+  50% {transform: translateX(var(--arrow-h));}
+}
+
+@keyframes float-down {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(var(--arrow-h));}
+}
+
+						  .fadein {
+						  animation: 1.5s fadeIn;
+						   animation-fill-mode: forwards;
+						   visibility:hidden;
+						  }
+		@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+						  					  .fadeout {
+						  animation: 3s fadeout;
+						   animation-fill-mode: forwards;
+						   animation-delay: 4.3s;
+
+						  }
+		@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+
+  100% {
+    visibility: visible;
+    opacity: 0;
+  }
+}
+
+
+						  					  .fadeout2 {
+						  animation: 3s fadeout;
+						   animation-fill-mode: forwards;
+						   animation-delay: 4.3s;
+
+						  }
+		@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+
+  100% {
+    visibility: visible;
+    opacity: 0;
+  }
+}
+
+
+						  .fadein2 {
+						  animation: 1.5s fadeIn;
+						   animation-fill-mode: forwards;
+						   visibility:hidden;
+						   animation-delay:1.7s;
+						  }
+		@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+    .fadein4 {
+						  animation: .1s fadeIn;
+						   animation-fill-mode: forwards;
+						   visibility:hidden;
+						   animation-delay:.5s;
+						  }
+		@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+  }
+  .fadein3 {
+						  animation: 5s fadeIn;
+						   animation-fill-mode: forwards;
+						   visibility:hidden;
+						   						   animation-delay:24s;
+
+						  }
+		@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+  opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+
+}
+
+</style>
+<style>
+.wrap {
+  position: relative;
+  width: 200px;
+}
+
+.inner {
+  position: absolute;
+  width:800px;
+
+}
+</style>
+
+<div class = 'wrap' style = 'position:relative;margin-top:-1.24%;width:0%;margin-left:9.4%;'>
+
+        <img src='/static/img/select_grid_llmv5.png' style = 'position:absolute;z-index:3;width:1500px;margin-left:95px;margin-top:55px;'>
+			<div class = 'fadeout' style = 'position:absolute;z-index:99;'>
+
+
+<style>
+.scroll-left {
+ height: 50px;
+ overflow: hidden;
+ position: relative;
+ background: yellow;
+ color: orange;
+ border: 1px solid orange;
+}
+.scroll-left p {
+ position: absolute;
+ width: 40%;
+ height: 100%;
+ line-height: 50px;
+ text-align: center;
+ /* Starting position */
+ transform:translateX(100%);
+ /* Apply animation to this element */
+ animation: scroll-left 12s linear infinite;
+ animation-delay:4s;
+}
+/* Move it (define the animation) */
+@keyframes scroll-left {
+ 0%   {
+ transform: translateX(100%);
+ }
+ 100% {
+ transform: translateX(-100%);
+ }
+}
+</style>
+
+
+
+
+			<div class = 'fadein' style = 'position:absolute;z-index:99;width:4000px;'>
+<style>
+				@font-face {
+   font-family: "font1";
+   src: url('/static/css/font1.ttf') format('truetype');
+}
+</style>
+                <div class="speech-bubble l round float" style = 'font-family:font1;margin-top:240px;margin-left:930px;height:150px;width:250px;position:absolute;z-index:99;font-size:20px;max-width:1200px;text-indent:-5px;float:left;text-align:left;'>
+Try asking questions  about the sample database!
+
+				</div>
+                </div>
+                </div>
+                <div class = 'fadeout2' style = 'position:absolute;z-index:99;width:4000px;'>
+                			<div class = 'fadein2' style = 'position:absolute;z-index:99;width:4000px;'>
+
+
+                <div class="speech-bubble r round float" style = 'font-family:font1;margin-top:630px;margin-left:550px;height:100px;width:250px;position:absolute;z-index:99;font-size:20px;max-width:1200px;text-indent:-5px;float:left;text-align:left;'>
+I'll answer them over here!
+</div>
+				</div>
+
+			</div>
+        </a>
+                </div>
+
+
+
+
+<div class="scroll-left" style = 'position:absolute;z-index:102;margin-top:103px;width:450px;margin-left:820px;background-color:transparent;border-color:transparent;font-family:font1;font-size:30px;'>
+<p style = 'width:800px;font-family:font1;'> LLM + RAG for Database Systems</p>
+</div>
+
+
+
+  <div class="card flex-grow-1" style = 'position:absolute;width:371px;height:565px;z-index:4;overflow-y:scroll;margin-left:1250px;margin-top:227px;overflow-x:scroll; border: .5px solid #00AA9E;'>
+
+
+
+      <div class="card-header  text-white" style="background-color:#00AA9E;margin-left:-1%;margin-top:-1.2%;width:112%;max-height:155%;"><b  style = 'indent:50px;font-size:25px;margin-top:-20px;height:150.5%;width:100.4%;'>Sample Database</b> </div>
+
+<table id="myTable" style = 'left:40%;max-height:100px;width:40%;overflow-y:scroll;overflow-y:scroll;z-index:8;background-color:white;font-size:15px;margin-left:0%;'>
+  <tr class="header">
+
+    <th style="width:40%;">Name</th>
+    <th style="width:40%;">City</th>
+          <th style="width:40%;">Role</th>
+                      <th style="width:20%;">Contact</th>
+          <th style="width:40%;">Salary</th>
+
+
+  </tr>
+
+    <style>
+
+        tr.td {
+        font-size:10px;
+
+    </style>
+  <tr>
+    <td>Ren Simpson</td>
+    <td>Hamburg</td>
+    <td>Software Engineer</td>
+      <td>595-7020</td>
+    <td> 180,000</td>
+    <td> </td>
+
+  </tr>
+  <tr>
+  <td> Seamus Butler</td>
+    <td>Dublin</td>
+    <td>Full Stack Engineer</td>
+            <td>214-0201</td>
+
+      <td>180,000</td>
+  </tr>
+  <tr>
+     <td>Simon Dancer</td>
+    <td>Atlanta</td>
+    <td> Data Architect</td>
+            <td>392-1210</td>
+
+      <td>170,000</td>
+  </tr>
+  <tr>
+    <td>Michael Essien</td>
+    <td>Havana</td>
+        <td> Backend Engineer </td>
+                  <td>301-2220</td>
+      <td> 180,000</td>
+  </tr>
+      <tr>
+    <td>Bryan Post</td>
+    <td>New York</td>
+        <td> Software Engineer </td>
+                      <td>429-3052</td>
+
+    <td> 190,000</td>
+  </tr>
+      <tr>
+    <td>Tyler Winters</td>
+    <td>Hamburg</td>
+        <td> Java Developer</td>
+                      <td>516-0364</td>
+
+    <td> 190,000</td>
+  </tr>
+      <tr>
+    <td>Frank Thomas</td>
+    <td>London</td>
+            <td> Systems Architect </td>
+                      <td>153-0251</td>
+
+    <td> 130,000</td>
+  </tr>
+      <tr>
+    <td>Mitchel Highlander</td>
+    <td> Paris</td>
+            <td> Data Scientist</td>
+                      <td>992-0452</td>
+
+    <td> 170,000</td>
+  </tr>
+      <tr>
+    <td>Pierre James</td>
+    <td>Baltimore</td>
+            <td>Backend Engineer </td>
+                      <td>540-6941</td>
+
+    <td> 140,000</td>
+  </tr>
+      <tr>
+    <td>Sophia Lopez</td>
+    <td>New York</td>
+            <td> Software Engineer</td>
+                      <td>230-4954</td>
+
+    <td> 180,000</td>
+  </tr>
+        <tr>
+    <td>James Vanderkaay</td>
+    <td>Baltimore</td>
+          <td> Data Engineer</td>
+                              <td>301-4232</td>
+
+    <td> 140,000</td>
+  </tr>
+          <tr>
+    <td>Chris Henderson</td>
+    <td>Houston</td>
+          <td> Python Developer</td>
+                                <td>594-6060</td>
+
+    <td> 130,000</td>
+  </tr>
+            <tr>
+    <td>Bri Larson</td>
+    <td>Los Angelos</td>
+          <td> Software Engineer</td>
+                                  <td>542-3324</td>
+
+    <td> 210,000</td>
+  </tr>
+              <tr>
+    <td>Matt Perry</td>
+    <td>Hamburg</td>
+          <td> Systems Architect</td>
+                                    <td>234-4325</td>
+
+    <td> 160,000</td>
+  </tr>
+            <tr>
+    <td>Michael Conrad</td>
+    <td>New York</td>
+          <td> Data Scientist</td>
+                                                    <td>442-4125</td>
+
+    <td> 150,000</td>
+                        <tr>
+    <td>Shia Brenson</td>
+    <td>Dublin</td>
+          <td> Systems Architect</td>
+                                        <td>467-8502</td>
+
+    <td> 140,000</td>
+  </tr>
+                       <tr>
+    <td>Ned Decroux</td>
+    <td>Paris</td>
+          <td>  Data Architect</td>
+                                                               <td>857-4453</td>
+
+    <td> 210,000</td>
+  </tr>
+                           <tr>
+    <td>Chris Meyers</td>
+    <td>Seattle</td>
+          <td>  Data Scientist</td>
+                                                                   <td>563-5556</td>
+
+    <td> 190,000</td>
+  </tr>
+
+
+                           <tr>
+    <td>Tina Schulk</td>
+    <td>Atlanta</td>
+          <td>  Java Developer </td>
+                                                                   <td>950-9920</td>
+
+    <td> 180,000</td>
+  </tr>
+
+
+                           <tr>
+    <td>Daniel North</td>
+    <td>Boston</td>
+          <td>  Python Developer </td>
+                                                                   <td>104-2345</td>
+
+    <td> 160,000</td>
+  </tr>
+
+                           <tr>
+    <td>Marvin Martins</td>
+    <td>Hamburg</td>
+          <td>  Systems Architect </td>
+                                                                   <td>943-2200</td>
+
+    <td> 130,000</td>
+  </tr>
+
+
+                           <tr>
+    <td>Greg Digornio</td>
+    <td>New York</td>
+          <td>  Java Developer </td>
+                                                                   <td>503-4005</td>
+
+    <td> 210,000</td>
+  </tr>
+
+                           <tr>
+    <td>Mike Lazowsky</td>
+    <td>Seattle</td>
+          <td>  Python Developer </td>
+                                                                   <td>506-6624</td>
+
+    <td> 140,000</td>
+  </tr>
+
+                           <tr>
+    <td>Mark Oelkuct</td>
+    <td>Atlanta</td>
+          <td>  Full Stack Engineer</td>
+                                                                   <td>281-6926</td>
+
+    <td> 210,000</td>
+  </tr>
+
+                           <tr>
+    <td>Brian McGee</td>
+    <td>London</td>
+          <td>  Backend Engineer </td>
+                                                                   <td>543-6602</td>
+
+    <td> 140,000</td>
+  </tr>
+
+                           <tr>
+    <td>Ted Capone</td>
+    <td>Atlanta</td>
+          <td>  Backend Engineer </td>
+                                                                   <td>234-3024</td>
+
+    <td> 190,000</td>
+  </tr>
+
+                           <tr>
+    <td>Charles Xavi </td>
+    <td>Boston</td>
+          <td>  Full Stack Engineer </td>
+                                                                   <td>434-6025</td>
+
+    <td> 210,000</td>
+  </tr>
+
+                           <tr>
+    <td>Brianna Colt</td>
+    <td>London</td>
+          <td>  Python Developer </td>
+                                                                   <td>620-3402</td>
+
+    <td> 130,000</td>
+  </tr>
+
+                           <tr>
+    <td>John Schmidt</td>
+    <td>Atlanta</td>
+          <td>  Backend Engineer </td>
+                                                                   <td>605-4052</td>
+
+    <td> 130,000</td>
+  </tr>
+
+                           <tr>
+    <td>Brandon Fellows </td>
+    <td>Boston</td>
+          <td> Data Architect </td>
+                                                                   <td>451-2299</td>
+
+    <td> 140,000
+  </tr>
+</table>
+
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+{% block styles %}
+<style>
+
+
+    .messages-box {
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    .messages-list {
+      padding-left: 0;
+      opacity:100%;
+    }
+
+    .message {
+      margin-bottom: 15px;
+      list-style: none;
+    }
+
+    .message-text {
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .sent {
+      background-color: #dcf8c6;
+      align-self: flex-end;
+    }
+
+    .received {
+      background-color: #f1f0f0;
+      align-self: flex-start;
+    }
+
+    .message-form {
+      display: flex;
+      position: absolute;
+      margin-top:25%;
+      background-color: #f8f9fa;
+    }
+
+    .message-input {
+      flex: 1;
+      border-radius: 0;
+      border-right: none;
+    }
+
+    .btn-send {
+      border-radius: 0;
+      border-color:#00AA9E;
+      background-color:#00AA9E;
+    }
+
+    .chat-container {
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+{% endblock %}
+
+
+{% block content %}
+<div class="chat-container" style = 'background:transparent;position:absolute;width:1240px;height:400px;margin-top:11.233%;margin-left:16.949%;z-index:3;'>
+  <div class="card flex-grow-1" style = 'position:absolute;width:379.8px;height:552px;z-index:9;margin-left:9.69%;margin-top:1.865%;'>
+    <div class="card-header  text-white" style="background-color: #00AA9E;margin-left:-.2%;margin-top:-3.2%;width:100.4%;indent:50px;font-size:23px;"><b>Database Chatbot</b>   </div>
+
+    <div class="card-body messages-box" style = 'display:flex;flex-direction: column-reverse;margin-bottom:-36%;'>
+
+      <ul class="list-unstyled messages-list">
+
+        <!-- <li class="message received">
+          <div class="message-text">
+            <div class="message-sender">
+              <b>AI Chatbot</b>
+            </div>
+            <div class="message-content">
+              Hi {{user.username}}, I am your AI Chatbot, you can ask me anything.
+            </div>
+          </div>
+        </li> -->
+                <li class="message sent">
+          <div class="message-text">
+            <div class="message-sender">
+              <b>You (Example Question)</b>
+            </div>
+            <div class="message-content">
+             What is the average salary of our professionals in Dublin?
+            </div>
+          </div>
+        </li>
+
+       <li class="message received">
+          <div class="message-text">
+            <div class="message-sender">
+              <b>AI Chatbot</b>
+            </div>
+            <div class="message-content">
+                The average salary of professionals working in Dublin is 160000.
+            </div>
+          </div>
+        </li>
+                         <li class="message sent">
+          <div class="message-text">
+            <div class="message-sender">
+              <b>You (Example Question)</b>
+            </div>
+            <div class="message-content">
+             What is Ned Decroux's phone number?
+            </div>
+          </div>
+        </li>
+
+       <li class="message received">
+          <div class="message-text">
+            <div class="message-sender">
+              <b>AI Chatbot</b>
+            </div>
+            <div class="message-content">
+            The phone number for Ned Decroux is 857-4453 and they make 210000.     </div>
+          </div>
+        </li>
+                            <li class="message sent">
+          <div class="message-text">
+            <div class="message-sender">
+              <b>You (Example Question)</b>
+            </div>
+            <div class="message-content">
+          What are the names and phone numbers of professionals in Boston who make over $140,000?
+            </div>
+          </div>
+        </li>
+
+       <li class="message received">
+          <div class="message-text">
+            <div class="message-sender">
+              <b>AI Chatbot</b>
+            </div>
+            <div class="message-content">
+                The names and phone numbers of professionals in Boston who make over $140,000 are: Daniel North - 104-2345, Charles Xavi - 435-6025             </div>
+          </div>
+        </li>
+
+        {% for chat in chats %}
+          {% if chat.user == request.user %}
+
+            <li class="message sent">
+          <div class="message-text">
+            <div class="message-sender">
+              <b>You</b>
+            </div>
+            <div class="message-content">
+              {{chat.message}}
+            </div>
+          </div>
+        </li>
+
+        <li class="message received">
+          <div class="message-text">
+            <div class="message-sender">
+              <b>AI Chatbot</b>
+            </div>
+            <div class="message-content">
+              {{chat.response}}
+            </div>
+          </div>
+        </li>
+
+
+
+
+          {% endif %}
+        {% endfor %}
+
+      </ul>
+
+    </div>
+    <br><br>
+    <br><br>
+    <br><br>
+  </div>
+  <form class="message-form" style = 'position:absolute; width:60%;z-index:22;margin-top:40.2%;'>
+    {%csrf_token%}
+    <div class="input-group" >
+      <input type="text" class="form-control message-input" placeholder="How many software engineers work out of New York?" style = 'position:absolute; width:120%;z-index:22;margin-top:17.8%;margin-left:44.9%;height:45px;'>
+      <div class="input-group-append"  style = 'position:absolute; width:100%;z-index:22;'>
+        <button type="submit" class="btn btn-primary btn-send"  onclick="showMessage();" style = 'position:absolute;z-index:22;margin-top:17.8%;margin-left:30.1%;height:45px;width:15%;'>Send</button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<style>
+.parent {
+
+
+}
+
+@keyframes msgSuccess {
+  0% {opacity:0;}
+  20% {opacity:1;}
+  50%  {opacity: 1;}
+  80% {opacity: 1;}
+   90% {opacity: 0;}
+
+  100% {opacity: 0; display: none; }
+}
+
+.child {
+position:absolute;
+  animation-name: msgSuccess;
+  animation-duration: 5s;
+  animation-delay:.4s;
+  opacity: 0;
+}
+.speech-bubble.r.float{
+  animation-name: float-left;
+
+}
+.d-none {
+  display: none;
+}
+</style>
+
+<script type="text/javascript">
+
+function showMessage() {
+
+  let message = document.getElementById('child');
+
+  if(message.classList.contains('d-none')){
+    message.classList.remove('d-none');
+  }
+
+  // message.classList.add('d-none');
+  message.style.animation = 'none';
+  message.offsetHeight;
+  message.style.animation = null;
+
+
+}
+</script>
+
+<div id="parent" class="parent" style = 'position:hidden;z-index:29;margin-top:40px;z-index:999;'>
+  <div id="child" class="child d-none"  style = 'z-index:999;'>
+      <div  class="speech-bubble r round float" style = 'position:absolute;z-index:999;margin-top:600px;margin-left:815px;height:80px;width:150px;font-size:20px;border-radius:10px;'>
+          <p style = 'font-size:30px;font-family:font1;margin-top:-7px;margin-left:-2px;letter-spacing:-8px;'> . . . </p></div>
+</div>
+
+            </div>
+
+<script>
+
+  const messagesList = document.querySelector('.messages-list');
+  const messageForm = document.querySelector('.message-form');
+  const messageInput = document.querySelector('.message-input');
+
+  messageForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const message = messageInput.value.trim();
+    if (message.length === 0) {
+      return;
+    }
+
+    const messageItem = document.createElement('li');
+    messageItem.classList.add('message', 'sent');
+    messageItem.innerHTML = `
+        <div class="message-text">
+            <div class="message-sender">
+                <b>You</b>
+            </div>
+            <div class="message-content">
+                ${message}
+            </div>
+        </div>`;
+    messagesList.appendChild(messageItem);
+
+    messageInput.value = '';
+
+    fetch('', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        'csrfmiddlewaretoken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+        'message': message
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        const response = data.response;
+        const messageItem = document.createElement('li');
+        messageItem.classList.add('message', 'received');
+        messageItem.innerHTML = `
+        <div class="message-text">
+            <div class="message-sender">
+              <b>AI Chatbot</b>
+            </div>
+            <div class="message-content">
+                ${response}
+            </div>
+        </div>
+          `;
+        messagesList.appendChild(messageItem);
+      });
+  });
+
+</script>
+{% endblock %}
+
+
+
+<style>
+
+
+
+
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: ubuntu;
+}
+
+.wrapper ul{
+	height: 50px;
+	display: flex;
+	justify-content: center;
+}
+.wrapper ul li{
+	display: inline-block;
+	padding: 40px 15px;
+}
+.wrapper ul li a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 20px;<div class="scroll-left" style = 'position:absolute;z-index:102;margin-top:73px;width:400px;margin-left:779px;background-color:transparent;border-color:transparent;font-family:font1;font-size:30px;'>
+<p style = 'margin-left:50%;'> Scroll left... </p>
+</div>
+
+	padding: 5px 15px;
+}
+.wrapper ul li a:hover{
+	background: #fff;
+	color: #000;
+}
+
+.wrapper p{
+	text-align: center;
+	font-size: 18px;
+	width: 35%;
+	margin: auto;
+	color:  #ddd;
+	line-height: 1.7;
+}
+.objects{
+	background:linear-gradient(to left, gray ,black );
+	width: 100%;
+	height: 100vh;
+}
+
+img {
+	border-radius: 30px;
+
+	box-shadow: 33 33 50px 50px #159957 inset;
+}
+.column {
+  float: left;
+  width: 10.33%;
+  padding-left: 50px;
+  margin-left:400px;
+  padding-top: -100px;
+}
+.box ul{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.box li{
+	position: absolute;
+	display: block;
+	list-style: none;
+	width: 25px;
+	height: 25px;
+	background: rgba(255,255,255,0.2);
+	box-shadow: 0 0 1px whitesmoke;
+	animation:  animate 25s linear infinite;
+	bottom: -50px;
+	border-radius: 25%;
+}
+.box li:nth-child(1){
+	left: 88%;
+	width: 55px;
+	height: 55px;
+	animation-delay: 0s;
+}
+.box li:nth-child(2){
+	left: 12%;
+	width: 30px;
+	height: 30px;
+	animation-delay: 1.5s;
+	animation-duration: 10s;
+}
+.box li:nth-child(3){
+	left: 70%;
+	width: 100px;
+	height: 100px;
+	animation-delay: 5.5s;
+}
+.box li:nth-child(4){
+	left: 45%;
+	width: 150px;
+	height: 150px;
+	animation-delay: 0s;
+	animation-duration: 15s;
+}
+.box li:nth-child(5){
+	left: 65%;
+	width: 40px;
+	height: 40px;
+	animation-delay: 0s;
+}
+.box li:nth-child(6){
+	left: 15%;
+	width: 110px;
+	height: 110px;
+	animation-delay: 3.5s;
+}
+@keyframes animate{
+	0%{
+		transform: translateY(0) scale(0);
+	}
+	100%{
+		transform: translateY(-800px) scale(2);
+		opacity: 0;
+	}
+}
+
+
+
+.box2 ul{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.box2 li{
+	position: absolute;
+	display: block;
+	list-style: none;
+	width: 15px;
+	height: 5px;
+	background: rgba(255,255,255,1.5);
+	box-shadow: 0 0 50px whitesmoke;
+	animation:  animate 16s linear infinite;
+	bottom: 90px;
+	border-radius: 25%;
+}
+.box2 li:nth-child(1){
+	left: 22%;
+	width: 35px;
+	height: 35px;
+	animation-delay: 0s;
+}
+.box2 li:nth-child(2){
+	left: 40%;
+	width: 20px;
+	height: 20px;
+	animation-delay: 1.5s;
+	animation-duration: 10s;
+}
+.box2 li:nth-child(3){
+	left: 70%;
+	width: 50px;
+	height: 50px;
+	animation-delay: 5.5s;
+}
+.box2 li:nth-child(4){
+	left: 45%;
+	width: 75px;
+	height: 75px;
+	animation-delay: 0s;
+	animation-duration: 15s;
+}
+.box2 li:nth-child(5){
+	left: 65%;
+	width: 25px;
+	height: 25px;
+	animation-delay: 0s;
+}
+.box2 li:nth-child(6){
+	left: 15%;
+	width: 50px;
+	height: 50px;
+	animation-delay: 13.5s;
+}
+@keyframes animate{
+	0%{
+		transform: translateY(0) scale(0);
+	}
+	100%{
+		transform: translateY(-800px) scale(2);
+		opacity: 0;
+	}
+}
+
+
+
+.box3 ul{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.box3 li{
+	position: absolute;
+	display: block;
+	list-style: none;
+	width: 25px;
+	height: 25px;
+	background: rgba(255,255,255,0.2);
+	box-shadow: 0 0 2px whitesmoke;
+	animation:  animate 10s linear infinite;
+	bottom: -150px;
+	border-radius: 25%;
+}
+.box3 li:nth-child(1){
+	left: 78%;
+	width: 40px;
+	height: 40px;
+	animation-delay: 0s;
+}
+.box3 li:nth-child(2){
+	left: 12%;
+	width: 30px;
+	height: 30px;
+	animation-delay: 1.5s;
+	animation-duration: 9s;
+}
+.box3 li:nth-child(3){
+	left: 70%;
+	width: 100px;
+	height: 100px;
+	animation-delay: 5.5s;
+}
+.box3 li:nth-child(4){
+	left: 45%;
+	width: 150px;
+	height: 150px;
+	animation-delay: 0s;
+	animation-duration: 15s;
+}
+.box3 li:nth-child(5){
+	left: 65%;
+	width: 40px;
+	height: 40px;
+	animation-delay: 0s;
+}
+.box3 li:nth-child(6){
+	left: 15%;
+	width: 110px;
+	height: 110px;
+	animation-delay: 3.5s;
+}
+@keyframes animate{
+	0%{
+		transform: translateY(0) scale(0);
+	}
+	100%{
+		transform: translateY(-800px) scale(2);
+		opacity: 0;
+	}
+}
+
+.box4 ul{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.box4 li{
+	position: absolute;
+	display: block;
+	list-style: none;
+	width: 35px;
+	height: 35px;
+	background: rgba(255,255,255,1.5);
+	box-shadow: 0 0 2px whitesmoke;
+	animation:  animate 20s linear infinite;
+	bottom: 350px;
+	border-radius: 25%;
+}
+.box4 li:nth-child(1){
+	left: 60%;
+	width: 25px;
+	height: 25px;
+	animation-delay: 0s;
+}
+.box4 li:nth-child(2){
+	left: 12%;
+	width: 45px;
+	height: 45px;
+	animation-delay: 1.5s;
+	animation-duration: 10s;
+}
+.box4 li:nth-child(3){
+	left: 70%;
+	width: 35px;
+	height: 35px;
+	animation-delay: 5.5s;
+}
+.box4 li:nth-child(4){
+	left: 45%;
+	width: 40px;
+	height: 40px;
+	animation-delay: 0s;
+	animation-duration: 15s;
+}
+.box4 li:nth-child(5){
+	left: 65%;
+	width: 55px;
+	height: 55px;
+	animation-delay: 0s;
+}
+.box4 li:nth-child(6){
+	left: 15%;
+	width: 60px;
+	height: 60px;
+	animation-delay: 3.5s;
+}
+@keyframes animate{
+	0%{
+		transform: translateY(0) scale(0);
+	}
+	100%{
+		transform: translateY(-800px) scale(2);
+		opacity: 0;
+	}
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
+
+.slowbox2 li{
+	position: absolute;
+	display: block;
+	list-style: none;
+	width: 25px;
+	height: 25px;
+	background: rgba(255,255,255,1.5);
+	box-shadow: 0 0 50px whitesmoke;
+	animation:  animate 22s linear infinite;
+	bottom: 10px;
+	border-radius: 25%;
+}
+.slowbox2 li:nth-child(1){
+	left: 40%;
+	width: 55px;
+	height: 55px;
+	animation-delay: 0s;
+}
+.slowbox2 li:nth-child(2){
+	left: 12%;
+	width: 30px;
+	height: 30px;
+	animation-delay: 0s;
+	animation-duration: 10s;
+}
+.slowbox2 li:nth-child(3){
+	left: 15%;
+	width: 100px;
+	height: 100px;
+	animation-delay: 0s;
+}
+.slowbox2 li:nth-child(4){
+	left: 45%;
+	width: 150px;
+	height: 150px;
+	animation-delay: 0s;
+	animation-duration: 15s;
+}
+.slowbox2 li:nth-child(5){
+	left: 65%;
+	width: 40px;
+	height: 40px;
+	animation-delay: 0s;
+}
+.slowbox2 li:nth-child(6){
+	left: 15%;
+	width: 110px;
+	height: 110px;
+	animation-delay: 0s;
+}
+@keyframes animate{
+	0%{
+		transform: translateY(0) scale(0);
+	}
+	100%{
+		transform: translateY(-800px) scale(2);
+		opacity: 0%;
+	}
+}
+.slowbox3 li{
+	position: absolute;
+	display: block;
+	list-style: none;
+	width: 25px;
+	height: 25px;
+	background: rgba(255,255,255,1.5);
+	box-shadow: 0 0 50px whitesmoke;
+	animation:  animate 15s linear infinite;
+	bottom: 100px;
+	border-radius: 25%;
+}
+.slowbox3 li:nth-child(1){
+	left: 30%;
+	width: 55px;
+	height: 55px;
+	animation-delay: 0s;
+}
+.slowbox3 li:nth-child(2){
+	left: 12%;
+	width: 30px;
+	height: 30px;
+	animation-delay: 1.5s;
+	animation-duration: 10s;
+}
+.slowbox3 li:nth-child(3){
+	left: 15%;
+	width: 100px;
+	height: 100px;
+	animation-delay: 5.5s;
+}
+.slowbox3 li:nth-child(4){
+	left: 45%;
+	width: 150px;
+	height: 150px;
+	animation-delay: 0s;
+	animation-duration: 15s;
+}
+.slowbox3 li:nth-child(5){
+	left: 65%;
+	width: 40px;
+	height: 40px;
+	animation-delay: 0s;
+}
+.slowbox3 li:nth-child(6){
+	left: 15%;
+	width: 110px;
+	height: 110px;
+	animation-delay: 3.5s;
+}
+@keyframes animate{
+	0%{
+		transform: translateY(0) scale(0);
+	}
+	100%{
+		transform: translateY(-800px) scale(2);
+		opacity: 0%;
+	}
+}
+
+</style>
+	<div class='objects'>
+		<ul class='box'>
+			<li></li>
+		</ul class = box>
+		<ul class='box2'>
+			<li></li>
+		</ul class = box2>
+		<ul class='slowbox2'>
+			<li></li>
+		</ul class = slowbox2>
+		<ul class='box4'>
+			<li></li>
+		</ul class = 'box4'>
+	</div>
+</body>
+</html>

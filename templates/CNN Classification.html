@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	{% load static %}
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title> CNN Tensorflow </title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"> 
+	<link rel='stylesheet' href="{% static 'css/proj3.css' %}">
+</head>
+<body>
+	<label>
+
+	<input type="checkbox" style = 'height:3%;width:2%;' checked>
+	<div class="toggle" style = 'margin-left:-1%;'>
+		<span class="common top_line"></span>
+		<span class="common middle_line"></span>
+		<span class="common bottom_line"></span>
+	</div>
+		<div class="sidebar" style = 'width:15%;'>
+	<ul class = 'first-ul'>
+						<li style="--i:1; font-size:40px;margin-left:45%;margin-top:15.5%;"><a href="#">Nav</a></li>
+
+			<li style="--i:1;margin-top:4%;font-size:30px;margin-left:4.2%;margin-top:35%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/Home"><i class="fas fa-tv" style = 'font-size:20px;margin-left:20.5%'></i> Home</a></li>
+
+			<<li style="--i:3;margin-top:4%;font-size:30px;margin-left:24%;"><a href="https://www.meetup.com/sc-code-and-data-science/"><i class="far fa-user"  style = 'font-size:25px;margin-left:-5%;'></i> SC Code</a></li>
+
+
+			<li style="--i:3;margin-top:4%;font-size:27px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/FSE" ><i class="far fa-heart" style = 'margin-left:-5%;'> </i> Full Stack</a></li>
+			<li style="--i:3;margin-top:4%;font-size:27px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/SWE"><i class="far fa-address-book" style = 'margin-left:-5%;'></i> Software</a></li>
+			<li style="--i:3;margin-top:4%;font-size:26px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/DS"><i class="far fa-address-book" style = 'margin-left:-5%;'></i> ML + DS</a></li>
+		 <li style="--i:3;margin-top:4%;font-size:26px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/WEBDEV"><i class="far fa-address-book" style = 'margin-left:-5%;'></i> Web Dev</a></li>
+			<li style="--i:3;margin-top:4%;font-size:27px;margin-left:24%;"><a href="mailto:oelkuctmp@gmail.com"><i class="far fa-comment" style = 'font-size:25px;margin-left:-5%'></i> Email Me</a></li>
+			<li style="--i:3;margin-top:4%;font-size:25px;margin-left:24%;"><a href="https://github.com/jake-bioinfo/tld"><i class="far fa-folder" style = 'margin-left:-5%'></i> Publication</a></li>
+		</ul class = 'first-ul'>
+		</div>
+		<center>
+										<div class='wrapper'>
+
+			<h2 style = 'margin-top:5%;margin-left:.7%;font-size:45px;' class = 'wrapper'>Deep Learning CNN: Parameter Classification</h2>
+
+
+														<div class = 'scroll' style = 'width:90%;margin-left:-8%;margin-top:-4.5%;height:90%;overflow-y:scroll;opacity:1;'>
+
+
+
+
+				<p style="text-align:left; width: 1600px; padding-left:70px;">
+					<img src='/static/img/cnn_page.png'  style = 'margin-top:2%;width:95%;height:1350px;margin-left:.1%;'class='wdn-stretch rounded-corners'/></p>
+				<p style="text-align:left; width: 1200px; margin-top:.55%;margin-left:11%;"><b>Deep Learning CNN for Video-Feed Classification </b> <br> <br> </p>
+
+
+
+
+
+					<img src='/static/img/background.png'  style = 'margin-top:-1%;width:88.8%;height:56%;z-index:-5;position:absolute;margin-left:6%;'class='wdn-stretch rounded-corners'/>
+												<p style="font-size:20px;text-align:left; width: 1250px; margin-left:12%; text-indent:0px; color='white';margin-top:1.5%;">
+
+					Imagine your team is manufacturing a Biopharmaceutical product and its process depends on making slight adjustments to an archaic bioreactor. Let’s say in order to guarantee product quality, the team must always have a person watching a live-video feed of the bioreactor's parameters.
+												</p>
+															<p style="font-size:20px;text-align:left; width: 1250px; margin-left:12%; text-indent:0px; color='white';margin-top:.5%;">
+Unsurprisingly, most employees don’t want to be put on night-shift to babysit a machine and what happens if they aren’t </p>
+
+																											<p style="font-size:20px;text-align:left; width: 1250px; margin-left:12%; text-indent:0px; color='white';margin-top:0%;">
+
+															paying attention? Seems like a good scenario for image-based classification.
+
+					The Convolutional Neural Network (CNN) built for this job was developed to observe the bioreactor’s display and classify whether process parameters are out-of-spec.
+													Built with Tensorflow, the model was trained on tens of thousands of video-feed examples as well as
+													thousands of generated images to guarantee predictive accuracy.
+																												</p>
+
+															<p style="font-size:20px;text-align:left; width: 1250px; margin-left:12%; text-indent:0px; color='white';margin-top:0.5%;">
+															After training and tuning, the model achieved sufficient levels of accuracy and was set to continuously makes live predictions via scheduled cron
+													jobs.
+													When a parameter runs a little too close to the out-of-spec range the predictions are fed to an Alert Program which you can read more about <a href = 'https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/Alerts' style="font-size:20px;text-align:left; width: 1250px;text-indent:0px; color='white';margin-top:0.5%;"> here. </a>
+
+
+					</br> </br> </br> </br></br> </br> </br> </br>
+	<br>
+
+
+
+				</p> 
+			</center>
+			</div>
+	</div>
+
+
+
+
+
+
+	</label>
+	<div class='objects'>
+		<ul class='box'>
+			<li></li>
+		</ul class = box>
+		<ul class='box2'>
+			<li></li>
+		</ul class = box2>
+		<ul class='slowbox2'>
+			<li></li>
+		</ul class = slowbox2>
+		<ul class='box4'>
+			<li></li>
+		</ul class = 'box4'>
+	</div>
+</body>
+</html>
+

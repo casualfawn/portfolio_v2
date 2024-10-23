@@ -1,0 +1,62 @@
+<!-- template/base.html -->
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+    <meta charset = 'UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width,initial-scale=1.0'>
+    <title>DOC</title>
+    <link rel='stylesheet' href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <section>
+            <form method="post">
+            {% csrf_token %}
+
+            <div class='input-group'>
+                <div class='label'>
+                    <label  style = 'color:white;font-size:20px;' for='username'>Username or Email</label>
+                </div>
+                <input type='text' name='username' id='username'placeholder='YourPortfolioLoginID@casfa.com' >
+            </div>
+
+            <div class='input-group'>
+                <div class='label'>
+                    <label for='password'>Password</label>
+                  
+                </div>
+                <input type='text' name='password' id='password'placeholder='' >
+            </div>
+            <button class='btn-submit' type='submit'>Log In</button>
+
+            			<a class = 'btn-submit' style = 'text-decoration:none' href="http://127.0.0.1:8000/chatbot/register"> Register
+</a>
+
+
+
+
+            </form>
+    </section>
+
+    <script src='https://unpkg.com/ionicons@5.0.0/dist/ionicons.js'></script>
+
+        <div class='objects'>
+            <ul class='box'>
+                <li></li>
+            </ul class = box>
+            <ul class='box2'>
+                <li></li>
+            </ul class = box2>
+            <ul class='slowbox2'>
+                <li></li>
+            </ul class = slowbox2>
+            <ul class='box4'>
+                <li></li>
+            </ul class = 'box4'>
+        </div>
+    </body>
+            {% endblock %}
+
+</html>

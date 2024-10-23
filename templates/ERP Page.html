@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	{% load static %}
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title> ERP LLM </title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"> 
+	<link rel='stylesheet' href="{% static 'css/proj1.css' %}">
+</head>
+<body>
+	<label>
+		<!-- toggle button here -->
+		<input type="checkbox">
+		<div class="toggle">
+			<span class="common top_line"></span>
+			<span class="common middle_line"></span>
+			<span class="common bottom_line"></span>
+		</div>
+		<div class="sidebar">
+			<h1>Menu</h1>
+	<ul class = 'first-ul'>
+						<li style="--i:1; font-size:40px;margin-left:45%;margin-top:15.5%;"><a href="#">Nav</a></li>
+
+			<li style="--i:1;margin-top:4%;font-size:30px;margin-left:4.2%;margin-top:35%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/Home"><i class="fas fa-tv" style = 'font-size:20px;margin-left:20.5%'></i> Home</a></li>
+
+			<<li style="--i:3;margin-top:4%;font-size:30px;margin-left:24%;"><a href="https://www.meetup.com/sc-code-and-data-science/"><i class="far fa-user"  style = 'font-size:25px;margin-left:-5%;'></i> SC Code</a></li>
+
+
+			<li style="--i:3;margin-top:4%;font-size:27px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/FSE" ><i class="far fa-heart" style = 'margin-left:-5%;'> </i> Full Stack</a></li>
+			<li style="--i:3;margin-top:4%;font-size:27px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/SWE"><i class="far fa-address-book" style = 'margin-left:-5%;'></i> Software</a></li>
+			<li style="--i:3;margin-top:4%;font-size:26px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/DS"><i class="far fa-address-book" style = 'margin-left:-5%;'></i> ML + DS</a></li>
+		 <li style="--i:3;margin-top:4%;font-size:26px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/WEBDEV"><i class="far fa-address-book" style = 'margin-left:-5%;'></i> Web Dev</a></li>
+			<li style="--i:3;margin-top:4%;font-size:27px;margin-left:24%;"><a href="mailto:oelkuctmp@gmail.com"><i class="far fa-comment" style = 'font-size:25px;margin-left:-5%'></i> Email Me</a></li>
+			<li style="--i:3;margin-top:4%;font-size:25px;margin-left:24%;"><a href="https://github.com/casualfawn"><i class="far fa-folder" style = 'margin-left:-5%'></i> Publication</a></li>
+
+		</ul class = 'first-ul'>
+		</div>
+							<center>
+										<div class='wrapper'>
+			<h2  style = 'width:50%;margin-left:-6%;margin-top:5%;' class = 'wrapper'> Retrieval Augmented LLM </h2>
+
+			<div class = 'scroll' style = 'width:90%;margin-left:-7%;margin-top:-2%;height:85%;'>
+				<p style="text-align:left; width: 1800px; padding-left:70px;">
+					<img src='/static/img/ERP_LLM.png'  style = 'width:81%; margin-left:0%;	border-radius: 30px;'/></p>
+				<p style="text-align:left; width: 1200px; margin-left:170px;margin-top:.5%"><b> Retrieval Augmented LLM for Company Systems </b> <br> <br> </p>
+						     
+
+				
+				<p style="text-align:left; width: 1200px; margin-left:170px; text-indent: 0px; color='white';">
+
+	Isn't this just the OpenAI API?  Why is the UI so bad? Can't I just buy this from a company? Well, the current frontend IS abysmal but the answer to all other questions is No. Pictured above is not a generalized "one-size-fits-all" chatbot,
+					it is a glimpse a chat assistant that can be developed for your team or business needs by a person on the inside who will get to know your data.
+					This chat assistant, when paired with internal company data, is capable of answering questions
+						that generalized models won't be able to abstract. How is this done? Why do we care? How is this different than Chat-GPT?
+	<br>
+	<br>
+
+	Based on the opensource collection of Google's multimodal models, this LLM combines the freely available Gemma-2b with a training process that narrows the scope of response generation based on the context of your company. Specifically, it
+					is optimized with an RAG tool that depends on a compilation of contextual data related to your systems. Before the model generates a response, it will reference context from the retrieval tool in the orchestration layer.
+					<br>
+					<br>
+
+														<img src='/static/img/RAG.webp'  style = 'width:81%; margin-left:20%;height:25%; width:50%;	border-radius: 20px;'/></p>
+
+				<p style="text-align:left; width: 1270px; margin-left:170px; text-indent: 0px; color='white';">
+<br>
+					The contextual training data, based on Hugging Face's 'b-mc2/sql-create-context' dataset, is a collection of user questions,responses,
+					and the appropriate queries for specific SQL schemas/tables.
+					By training on a multitude of queries, and questions it learns to retrieve information from your database by identifying the requested fields and calculations.
+					For example, it is able to generate queries and answer questions requiring GROUP BY and WHERE commands for metrics ike group mean, standard deviation, sum, etc.
+					<br>
+					<br>
+					Here's a snippet of the demo training dataset:
+
+					<br>
+					<br>
+
+
+
+
+
+</p>
+				<img src='/static/img/traincontext.png'  style = 'width:81%; margin-left:21.2%;height:25%; width:40%;	border-radius: 20px;'/></p>
+				<p style="text-align:left; width: 1200px; margin-left:170px; text-indent: 0px; color='white';">
+	Once the model is trained on data that appropriately represents a company's system,
+					it can generate queries to retrieve information from plain-english user prompts and answer questions requiring calculation.
+
+</br>
+</br>
+					<br>
+
+				</p> 
+			</center>
+			</div>
+	</div>
+
+
+
+
+
+
+	</label>
+	<div class='objects'>
+		<ul class='box'>
+			<li></li>
+		</ul class = box>
+		<ul class='box2'>
+			<li></li>
+		</ul class = box2>
+		<ul class='slowbox2'>
+			<li></li>
+		</ul class = slowbox2>
+		<ul class='box4'>
+			<li></li>
+		</ul class = 'box4'>
+	</div>
+</body>
+</html>
+

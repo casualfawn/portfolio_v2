@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+{% load static %}
+
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title> SWE </title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+<link rel='stylesheet' href="{% static 'css/FSE.css' %}">
+</head>
+<body>
+{% load static %}
+
+<label>
+	<!-- toggle button here -->
+	<input type="checkbox" style = 'height:3%;width:2%;' checked>
+	<div class="toggle" style = 'margin-left:-1%;'>
+		<span class="common top_line"></span>
+		<span class="common middle_line"></span>
+		<span class="common bottom_line"></span>
+	</div>
+		<div class="sidebar" style = 'width:15%;'>
+	<ul class = 'first-ul'>
+						<li style="--i:1; font-size:40px;margin-left:45%;margin-top:15.5%;"><a href="#">Nav</a></li>
+
+			<li style="--i:1;margin-top:4%;font-size:30px;margin-left:4.2%;margin-top:35%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/Home"><i class="fas fa-tv" style = 'font-size:20px;margin-left:20.5%'></i> Home</a></li>
+
+<li style="--i:3;margin-top:4%;font-size:30px;margin-left:24%;"><a href="https://www.meetup.com/sc-code-and-data-science"><i class="far fa-user"  style = 'font-size:25px;margin-left:-5%;'></i> SC Code</a></li>
+
+			<li style="--i:3;margin-top:4%;font-size:27px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/FSE" ><i class="far fa-heart" style = 'margin-left:-5%;'> </i> Full Stack</a></li>
+			<li style="--i:3;margin-top:4%;font-size:27px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/SWE"><i class="far fa-address-book" style = 'margin-left:-5%;'></i> Software</a></li>
+			<li style="--i:3;margin-top:4%;font-size:26px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/DS"><i class="far fa-address-book" style = 'margin-left:-5%;'></i> ML + DS</a></li>
+		 <li style="--i:3;margin-top:4%;font-size:26px;margin-left:24%;"><a href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/WEBDEV"><i class="far fa-address-book" style = 'margin-left:-5%;'></i> Web Dev</a></li>
+			<li style="--i:3;margin-top:4%;font-size:27px;margin-left:24%;"><a href="mailto:oelkuctmp@gmail.com"><i class="far fa-comment" style = 'font-size:25px;margin-left:-5%'></i> Email Me</a></li>
+			<li style="--i:3;margin-top:4%;font-size:25px;margin-left:24%;"><a href="https://github.com/jake-bioinfo/tld"><i class="far fa-folder" style = 'margin-left:-5%'></i> Publication</a></li>
+		</ul class = 'first-ul'>
+		</div>
+	<div class='wrapper' style = 'height:100%;width:55%;margin-left:20%;'>
+
+		<div class = 'scroll' style =  'margin-left:-10%;height:99.5%;margin-top:-7%;width:140%;'>
+		<main style = 'margin-left:30%;'>
+
+
+			<ul style = 'margin-top:-1400px;margin-left:-25%;'>
+				<li style = 'width:300px; '>
+				<div class='card card-3' style = "background-image: url('/static/img/webdev1_v1.png');"  onclick='window.location.href="https://iceland-wares-fb84b32be002.herokuapp.com"'>
+		<div class='content'>
+			<h5 style = 'margin-left:-1%;margin-top:5%;width:90%;'>Iceland Wares Ecommerce</h5>
+			<p style = 'width:250px;font-size:18px;margin-left:.5%;margin-top:-8%;'>
+				E-Commerce site for </br> Icelandic style built with Django.  Shop by specific collections 	or categories.
+			</p>
+		</div>
+	</a>
+	</div>
+				</li>
+				<li style = 'width:300px; margin-left:80px;'>
+				<div class='card card-3' style = "background-image: url('/static/img/rag_llm.png');" onclick='window.location.href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/chatbot"'>
+		<div class='content'>
+				<h5 style = 'margin-left:0%;width:90%;'> Talk to your Database </br> RAG Optimized LLM </h5>
+			<p style = 'width:250px;font-size:18px;margin-left:-5%;margin-top:-8%;width:90%;'>
+				"How many Data Science employees do we have working at the New York office? Using RAG, this model is optimized to answer questions related to private company data.
+
+			</p>
+		</div>
+	</a>
+	</div>
+				</li>
+						<li style = 'width:300px; margin-left:80px;'>
+				<div class='card card-3' style = "background-image: url('/static/img/survey_v1.png');" onclick='window.location.href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/FSE/survey-breaker-llm"'>
+		<div class='content'>
+			<h5 style = 'margin-left:7.5%;width:70%;'> 	"AI" GPT Survey Breaker + Scraper </h5>
+			<p style = 'width:250px;font-size:18px;margin-left:-5.5%;margin-top:-9%;width:89%;text-align:center;'>
+				With the advent of AI we </br> must explore the ways it is used nefariously. This bot crawls and completes online surveys while avoiding similarity to </br> previous submissions.
+
+			</p>
+		</div>
+	</a>
+	</div>
+				</li>
+
+			</ul>
+
+
+				<ul style = 'margin-top:-300px;margin-left:-230.5%;'>
+				<li style = 'width:300px;'>
+				<div class='card card-3'  style = "background-image: url('/static/img/text_alerts_v1.png');"onclick='window.location.href="https://www.meetup.com/sc-code-and-data-science"'>
+		<div class='content'>
+			<h5 style = 'margin-left:-7.3%;'>South Carolina Code and Data Science Group</h5>
+			<p style = 'font-size:18px;margin-left:-.5%;margin-top:-9%;width:82%;'>
+				Founder being yours truly, I manage this group of 700+ members to help coders and data scientists collaborate with other like-minded professionals.
+			</p>
+		</div>
+	</a>
+	</div>
+				</li>
+
+				<li style = 'width:300px; margin-left:80px;'>
+				<div class='card card-3' style = "background-image: url('/static/img/leetcode.png');" onclick='window.location.href="https://github.com/casualfawn/LC_Challenges"'>
+		<div class='content'>
+			<h5 style = 'margin-left:-8%; margin-top:6%;'>LeetCode Challenges</h5>
+			<p style = 'width:250px;font-size:18px;margin-left:-5%;margin-top:-9%;width:89%;text-align:center;'>
+					Repository of mastered leetcode challenges. Used to track  progress in learning a variety of unique algorithms.
+			</p>
+		</div>
+	</a>
+	</div>
+				</li>
+				<li style = 'width:300px; margin-left:80px;'>
+				<div class='card card-3' style = "background-image: url('/static/img/twitter_NLP.webp');" onclick='window.location.href="https://oelkuct-portfolio-85010a89a0a9.herokuapp.com/FSE/survey-breaker-llm"'>
+		<div class='content'>
+	<h5 style = 'margin-left:10%;width:70%;'> SMS Alert and Monitoring System </h5>
+			<p style = 'width:250px;font-size:18px;margin-left:-5%;margin-top:-8%;width:90%;'>
+				An extension of a CNN classifier. Alerts employees via SMS when process parameters run out of spec. Doubles as data collection for improving CNN performance.
+			</p>
+		</div>
+
+	</a>
+	</div>
+				</li>
+			</ul>
+
+
+
+
+</div>
+		</div>
+</main>
+</div>
+
+
+
+
+
+</label>
+<div class='objects'>
+	<ul class='box'>
+		<li></li>
+	</ul class = 'box'>
+	<ul class='slowbox2'>
+		<li></li>
+	</ul class = 'slowbox2'>
+	<ul class='box2'>
+		<li></li>
+	</ul class = 'box2'>
+	<ul class='box5'>
+		<li></li>
+	</ul class = 'box5'>
+	<ul class='box3'>
+		<li></li>
+	</ul class = 'box3'>
+	<ul class='box4'>
+		<li></li>
+	</ul class = 'box4'>
+</div>
+</body>
+</html>

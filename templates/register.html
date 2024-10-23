@@ -1,0 +1,60 @@
+<!-- template/base.html -->
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+    <meta charset = 'UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width,initial-scale=1.0'>
+    <title>DOC</title>
+    <link rel='stylesheet' href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <section>
+
+      <form method="post">
+        {% csrf_token %}
+        <div class="input-group">
+         <div class='label'>
+                    <label  style = 'color:white;font-size:20px;' for='username'>Username</label>
+                </div>
+          <input type="text" class = 'form-control' id="username" name="username" required>
+        </div>
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="input-group">
+          <label for="password1">Password</label>
+          <input type="password" class="form-control" id="password1" name="password1" required>
+        </div>
+        <div class="input-group">
+          <label for="password2">Confirm Password</label>
+          <input type="password" class="form-control" id="password2" name="password2" required>
+        </div>
+        <button class="btn-submit">Register</button>
+      </form>
+    </section>
+
+
+    <script src='https://unpkg.com/ionicons@5.0.0/dist/ionicons.js'></script>
+
+    <div class='objects'>
+        <ul class='box'>
+            <li></li>
+        </ul class = box>
+        <ul class='box2'>
+            <li></li>
+        </ul class = box2>
+        <ul class='slowbox2'>
+            <li></li>
+        </ul class = slowbox2>
+        <ul class='box4'>
+            <li></li>
+        </ul class = 'box4'>
+    </div>
+</body>
+        {% endblock %}
+
+</html>
